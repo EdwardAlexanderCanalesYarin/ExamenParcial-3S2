@@ -77,3 +77,30 @@ public class Main {
     }
 }
 
+PREGUNTA 2 RGR en Tic-Tac-Toe
+Prueba: límites deltablero I
+// Programa del test sin que exista el objeto ticTacToe ni el metodo jugar
+RED
+import org.example.ticTacToe;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class TestLimiteTableroI {
+    @Test
+    public void TestLimiteTableroI(){
+        assertEquals(new RuntimeException("Error"), ticTacToe.jugar(5, 2),0);
+    }
+}  
+// Programa codigo que haga pasar los test a Green
+GREEN
+package org.example;
+import java.lang.RuntimeException;
+public class ticTacToe {
+    public static void jugar(int row, int column){
+        if(row >= 0 && row < 3 && column >= 0 && column < 3){
+            System.out.println("Jugar");
+        }else{
+            new RuntimeException("Error");
+        }
+    }
+}                                           
